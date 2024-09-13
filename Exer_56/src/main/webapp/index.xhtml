@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Gestão de Funcionários</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Nome:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.nome}" />
+
+                <h:outputText value="Sexo:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.sexo}" />
+
+                <h:outputText value="Idade:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.idade}" />
+
+                <h:outputText value="Bairro:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.bairro}" />
+
+                <h:outputText value="Peso:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.peso}" />
+
+                <h:outputText value="Altura:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.altura}" />
+
+                <h:outputText value="Cargo:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.cargo}" />
+
+                <h:outputText value="Salário Bruto:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.salarioBruto}" />
+
+                <h:outputText value="Encargos:" />
+                <h:inputText value="#{funcionarioBean.novoFuncionario.encargos}" />
+
+                <h:commandButton value="Adicionar Funcionário" action="#{funcionarioBean.adicionarFuncionario}" />
+            </h:panelGrid>
+
+            <h:panelGrid columns="2">
+                <h:outputText value="Pessoas que residem em Brotas, Nazaré e Bonocô:" />
+                <h:outputText value="#{funcionarioBean.pessoasBairros}" />
+
+                <h:outputText value="Número de funcionários que receberão bônus:" />
+                <h:outputText value="#{funcionarioBean.funcionariosComBonus}" />
+
+                <h:outputText value="Média de Peso (Produção):" />
+                <h:outputText value="#{funcionarioBean.mediaPeso}" />
+
+                <h:outputText value="Média de Idade (Produção):" />
+                <h:outputText value="#{funcionarioBean.mediaIdade}" />
+
+                <h:outputText value="Número de funcionários para o campeonato de basquete:" />
+                <h:outputText value="#{funcionarioBean.funcionariosBasquete}" />
+
+                <h:outputText value="Total da Folha Salarial Líquida:" />
+                <h:outputText value="#{funcionarioBean.totalFolhaSalarial}" />
+
+                <h:outputText value="Quantidade de Gerentes e Secretárias:" />
+                <h:outputText value="#{funcionarioBean.quantidadeGerentesSecretarias}" />
+
+                <h:outputText value="Nova Secretária (Salário menor quer 700):" />
+                <h:outputText value="#{funcionarioBean.novaSecretaria.nome}" rendered="#{not empty funcionarioBean.novaSecretaria}" />
+                <h:outputText value="Nenhuma candidata disponível" rendered="#{empty funcionarioBean.novaSecretaria}" />
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

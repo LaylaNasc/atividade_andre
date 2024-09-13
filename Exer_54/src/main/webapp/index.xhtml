@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Pesquisa sobre "Senhor dos Anéis"</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Média das idades (Resposta Excelente):" />
+                <h:outputText value="#{pesquisaBean.mediaIdadeExcelente}" />
+
+                <h:outputText value="Quantidade de pessoas que responderam Regular:" />
+                <h:outputText value="#{pesquisaBean.qtdRegular}" />
+
+                <h:outputText value="Percentual de respostas Excelente:" />
+                <h:outputText value="#{pesquisaBean.percentualExcelente}%" />
+
+                <h:outputText value="Percentual de respostas Bom:" />
+                <h:outputText value="#{pesquisaBean.percentualBom}%" />
+
+                <h:outputText value="Percentual de respostas Regular:" />
+                <h:outputText value="#{pesquisaBean.percentualRegular}%" />
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

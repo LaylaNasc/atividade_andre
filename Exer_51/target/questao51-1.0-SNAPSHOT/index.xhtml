@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Série de Ricci</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="numeroTermos" value="Número de Termos:" />
+                <h:inputText id="numeroTermos" value="#{ricciBean.numeroTermos}">
+                    <f:convertNumber type="number" />
+                </h:inputText>
+                <h:message for="numeroTermos" />
+
+                <h:commandButton value="Gerar Série" action="#{ricciBean.gerarSerieRicci}" />
+            </h:panelGrid>
+
+            <h:panelGroup rendered="#{not empty ricciBean.serieRicci}">
+                <h:outputText value="Série de Ricci (primeiros 10 termos):" />
+                <h:dataTable value="#{ricciBean.serieRicci}" var="numero">
+                    <h:column>
+                        <h:outputText value="#{numero}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{not empty ricciBean.mensagemErro}">
+                <h:outputText value="#{ricciBean.mensagemErro}" style="color:red;" />
+            </h:panelGroup>
+        </h:form>
+    </h:body>
+</html>
+

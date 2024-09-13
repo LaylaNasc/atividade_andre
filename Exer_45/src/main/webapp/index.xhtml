@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Idades</title>
+    </h:head>
+    <h:body>
+        <h2>Informe as idades de 20 pessoas:</h2>
+
+        <h:form>
+            <ui:repeat value="#{idadeBean.idades}" var="idade" varStatus="status">
+                <h:outputLabel value="Idade #{status.index + 1}: " />
+                <h:inputText value="#{idadeBean.idades[status.index]}" required="true" size="3" converter="javax.faces.Integer"/>
+                <br />
+            </ui:repeat>
+            <br />
+            <h:commandButton value="Calcular Menor Idade" action="#{idadeBean.calcularMenorIdade}" />
+
+        </h:form>
+    </h:body>
+</html>

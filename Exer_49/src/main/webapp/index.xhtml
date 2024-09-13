@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Conversão Celsius-Fahrenheit</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="limiteInferior" value="Limite Inferior:" />
+                <h:inputText id="limiteInferior" value="#{conversaoBean.limiteInferior}" />
+
+                <h:outputLabel for="limiteSuperior" value="Limite Superior:" />
+                <h:inputText id="limiteSuperior" value="#{conversaoBean.limiteSuperior}" />
+
+                <h:outputLabel for="decremento" value="Decremento:" />
+                <h:inputText id="decremento" value="#{conversaoBean.decremento}" />
+
+                <h:commandButton value="Gerar Tabela" action="#{conversaoBean.gerarTabelaConversao}" />
+            </h:panelGrid>
+
+            <h:panelGroup rendered="#{not empty conversaoBean.tabelaConversao}">
+                <h:outputText value="Tabela de Conversão:" />
+                <h:dataTable value="#{conversaoBean.tabelaConversao}" var="linha">
+                    <h:column>
+                        <h:outputText value="#{linha}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+        </h:form>
+    </h:body>
+</html>
+

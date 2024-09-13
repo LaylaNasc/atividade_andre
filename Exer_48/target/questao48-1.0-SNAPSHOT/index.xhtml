@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cálculo de Potência</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="base" value="Base (b):" />
+                <h:inputText id="base" value="#{calcBean.base}" required="true" />
+
+                <h:outputLabel for="exponent" value="Expoente (n):" />
+                <h:inputText id="exponent" value="#{calcBean.exponent}" required="true" />
+
+                <h:commandButton value="Calcular" action="#{calcBean.calculate}" />
+            </h:panelGrid>
+
+            <h:panelGroup>
+                <h:outputText value="Resultado: #{calcBean.result}" rendered="#{calcBean.result > 0}" />
+                <h:outputText value="Por favor, insira valores válidos para base e expoente." rendered="#{calcBean.result == 0}" />
+            </h:panelGroup>
+        </h:form>
+    </h:body>
+</html>

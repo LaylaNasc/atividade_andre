@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Entrada de Números</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Número 1:" />
+                <h:inputText value="#{numberBean.numeros[0]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 2:" />
+                <h:inputText value="#{numberBean.numeros[1]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 3:" />
+                <h:inputText value="#{numberBean.numeros[2]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 4:" />
+                <h:inputText value="#{numberBean.numeros[3]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 5:" />
+                <h:inputText value="#{numberBean.numeros[4]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 6:" />
+                <h:inputText value="#{numberBean.numeros[5]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 7:" />
+                <h:inputText value="#{numberBean.numeros[6]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 8:" />
+                <h:inputText value="#{numberBean.numeros[7]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 9:" />
+                <h:inputText value="#{numberBean.numeros[8]}" converter="javax.faces.Double" />
+
+                <h:outputText value="Número 10:" />
+                <h:inputText value="#{numberBean.numeros[9]}" converter="javax.faces.Double" />
+
+                <h:commandButton value="Calcular Metades" action="#{numberBean.calcularMetade}" />
+            </h:panelGrid>
+
+            <h:panelGroup rendered="#{not empty numberBean.metade}">
+                <h:outputText value="Metades dos Números:" />
+                <h:dataTable value="#{numberBean.metade}" var="half">
+                    <h:column>
+                        <h:outputText value="#{half}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+        </h:form>
+    </h:body>
+</html>
+
